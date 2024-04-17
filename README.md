@@ -129,16 +129,53 @@ softwareupdate --install-rosetta
 Execute the following command to install additional deps:
 
 ```bash
-brew install openssl
+brew install openssl wget
 ```
 
 ##### Protocol Buffers v25.2
 
-TODO
+Execute the following commands:
+
+###### Intel CPU
+
+```bash
+wget https://github.com/protocolbuffers/protobuf/releases/download/v25.2/protoc-25.2-osx-x86_64.zip -O ./protoc.zip
+unzip protoc.zip -d protoc
+sudo mv ./protoc/include/* /usr/local/include
+sudo mv ./protoc/bin/protoc /usr/local/bin/protoc
+```
+
+###### ARM CPU
+
+```bash
+wget
+https://github.com/protocolbuffers/protobuf/releases/download/v25.2/protoc-25.2-osx-aarch_64.zip -O ./protoc.zip
+unzip protoc.zip -d protoc
+sudo mv ./protoc/include/* /opt/include
+sudo mv ./protoc/bin/protoc /opt/bin/protoc
+```
 
 ##### Protocol Buffers Gen OpenAPI v2.19.0
 
-TODO
+Execute the following commands:
+
+###### Intel CPU
+
+```bash
+wget https://github.com/grpc-ecosystem/grpc-gateway/releases/download/v2.19.0/protoc-gen-openapiv2-v2.19.0-darwin-x86_64 -O ./protoc-gen-openapiv2
+sudo mv ./protoc-gen-openapiv2 /usr/local/bin/protoc-gen-openapiv2
+sudo chmod +x /usr/local/bin/protoc-gen-openapiv2
+```
+
+###### ARM CPU
+
+```bash
+wget https://github.com/grpc-ecosystem/grpc-gateway/releases/download/v2.19.0/protoc-gen-openapiv2-v2.19.0-darwin-arm64 -O ./protoc-gen-openapiv2
+sudo mv ./protoc-gen-openapiv2 /opt/bin/protoc-gen-openapiv2
+sudo chmod +x /opt/bin/protoc-gen-openapiv2
+```
+
+** If you encounter "Operation not permitted" error, you need to give full disk access to the `Terminal` and disable `System Integrity Protection` from the recovery Terminal.
 
 #### Windows
 
@@ -174,7 +211,7 @@ git clone https://github.com/zenchain-protocol/zenchain-explorer-rs
 
 authenticate to GitHub, after confirmation, git starts cloning the repository.
 
-Open the interested folder and execute the following commands:
+Open the service specific folder and execute the following commands:
 
 ```bash
 cargo build --release
