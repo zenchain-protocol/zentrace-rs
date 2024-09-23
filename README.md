@@ -1,23 +1,23 @@
-# Zenchain Explorer Rust Services
+# Zentrace Rust Services
 
-Zenchain Explorer is a comprehensive block explorer and analytics platform tailored for the Zenchain blockchain. Originating as a fork from Blockscout, the Zenchain Explorer has undergone significant enhancements to improve functionality and ease of deployment across various operating systems.
+Zentrace is a comprehensive block explorer and analytics platform tailored for the Zenchain blockchain. Originating as a fork from Blockscout, Zentrace has undergone significant enhancements to improve functionality and ease of deployment across various operating systems.
 
-The Zenchain Explorer ecosystem consists of the following components:
+Zentrace ecosystem consists of the following components:
 
-* Zenchain Explorer Backend <https://github.com/zenchain-protocol/zenchain-explorer-backend>
-* Zenchain Explorer Frontend <https://github.com/zenchain-protocol/zenchain-explorer-frontend>
-* Zenchain Explorer Rust Services (**the current repository**)
+- Zentrace Backend <https://github.com/zenchain-protocol/zentrace-backend>
+- Zentrace Frontend <https://github.com/zenchain-protocol/zentrace-frontend>
+- Zentrace Rust Services (**the current repository**)
 
 ## Available Rust Services list
 
-* Smart Contract Verifier ([smart-contract-verifier](smart-contract-verifier)): provides API for Ethereum contract verification written in Solidity and Vyper.
-* Signatures Provider ([sig-provider](sig-provider)): aggregator of Ethereum signatures for transactions and events.
-* EVM Visualizer ([visualizer](visualizer)): service for evm visualization such as Solidity contract visualization.
-* Ethereum Bytecode Database ([eth-bytecode-db](eth-bytecode-db)): verifies smart contracts and searches for the sources via bytecodes.
+- Smart Contract Verifier ([smart-contract-verifier](smart-contract-verifier)): provides API for Ethereum contract verification written in Solidity and Vyper.
+- Signatures Provider ([sig-provider](sig-provider)): aggregator of Ethereum signatures for transactions and events.
+- EVM Visualizer ([visualizer](visualizer)): service for evm visualization such as Solidity contract visualization.
+- Ethereum Bytecode Database ([eth-bytecode-db](eth-bytecode-db)): verifies smart contracts and searches for the sources via bytecodes.
 
 # Development environment configuration
 
-The process of setting up the development environment for Zenchain Explorer Rust Services, which is built using the Rust programming language, differs depending on the operating system in use. Rust's inherently multiplatform nature ensures that Zenchain Explorer Rust Services can be developed across various environments, including Linux, macOS, and Windows. This tutorial is designed to guide you through the preparation of your development environment, tailored to each of these operating systems.
+The process of setting up the development environment for Zentrace Rust Services, which is built using the Rust programming language, differs depending on the operating system in use. Rust's inherently multiplatform nature ensures that Zentrace Rust Services can be developed across various environments, including Linux, macOS, and Windows. This tutorial is designed to guide you through the preparation of your development environment, tailored to each of these operating systems.
 
 ## Dependencies
 
@@ -175,7 +175,7 @@ sudo mv ./protoc-gen-openapiv2 /opt/bin/protoc-gen-openapiv2
 sudo chmod +x /opt/bin/protoc-gen-openapiv2
 ```
 
-** If you encounter "Operation not permitted" error, you need to give full disk access to the `Terminal` and disable `System Integrity Protection` from the recovery Terminal.
+\*\* If you encounter "Operation not permitted" error, you need to give full disk access to the `Terminal` and disable `System Integrity Protection` from the recovery Terminal.
 
 #### Windows
 
@@ -206,7 +206,7 @@ Once downloaded, copy the file in a folder under `C:`, then add the folder path 
 Create a new folder, open it in the terminal and execute:
 
 ```bash
-git clone https://github.com/zenchain-protocol/zenchain-explorer-rs
+git clone https://github.com/zenchain-protocol/zentrace-rs
 ```
 
 authenticate to GitHub, after confirmation, git starts cloning the repository.
@@ -226,13 +226,13 @@ You can also build and run each service within Docker directly.
 Open the service specific folder and then execute:
 
 ```bash
-docker build -t zenchain-explorer/SERVICE_NAME .
+docker build -t zentrace/SERVICE_NAME .
 ```
 
 then you can start the container with the following command:
 
 ```bash
-docker run -dp localhost:PORT:PORT zenchain-explorer/SERVICE_NAME
+docker run -dp localhost:PORT:PORT zentrace/SERVICE_NAME
 ```
 
 ### With docker-compose
@@ -243,4 +243,4 @@ Open the service specific folder and then execute:
 docker compose up -d
 ```
 
-starts a container using the `zenchain-explorer/SERVICE_NAME` built image and starts listening using the ports specified in the docker-compose.yml configuration file.
+starts a container using the `zentrace/SERVICE_NAME` built image and starts listening using the ports specified in the docker-compose.yml configuration file.
